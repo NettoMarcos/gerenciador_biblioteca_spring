@@ -1,6 +1,8 @@
 package com.example.demo.api.model;
 
+import com.example.demo.api.dto.CategoriaAtualizarDTO;
 import com.example.demo.api.dto.CategoriaCadastroDTO;
+import com.example.demo.api.dto.CategoriaDetalhesDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,4 +23,11 @@ public class CategoriaEntity {
     public CategoriaEntity(CategoriaCadastroDTO dto) {
         this.nome = dto.nome();
     }
+
+    public void atualizarCategoria(CategoriaAtualizarDTO dto){
+        if (dto.nome() != null){
+            this.nome = dto.nome();
+        }
+    }
 }
+

@@ -6,10 +6,9 @@ import com.example.demo.api.model.LivroEntity;
 
 import java.util.List;
 
-public record LivroDetalheDTO(Long id, String titulo, String isbn, AutorEntity autor_id, CategoriaEntity categoria_id) {
+public record LivroDetalheDTO(Long id, String titulo, String isbn, AutorResumoDTO autor, CategoriaEntity categoria) {
 
     public LivroDetalheDTO(LivroEntity livro){
-        this(livro.getId(), livro.getTitulo(), livro.getIsbn(), livro.getAutor_id(), livro.getCategoria_id());
+        this(livro.getId(), livro.getTitulo(), livro.getIsbn(), new AutorResumoDTO(livro.getAutor_id()), livro.getCategoria_id());
     }
-
 }

@@ -1,15 +1,12 @@
 package com.example.demo.api.dto;
 
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record LivroCadastroDTO(
-        @NotBlank
+public record LivroAtualizarDTO(
+        @NotNull
+        Long id,
         String titulo,
-        @NotBlank
         String isbn,
-        @NotNull
         Long autor_id,
-        @NotNull
         Long categoria_id) {
 }
